@@ -1,6 +1,9 @@
 # Thjs
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+this project was made for fun just to test the new zoneless angular.
+based on a primagen video about json [JSON, I hardly know 'er](https://www.youtube.com/watch?v=TTjYjSEGHek) 
+
+Feel free to add more cases or propose improvements!
 
 ## Development server
 
