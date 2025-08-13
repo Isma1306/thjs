@@ -1,7 +1,7 @@
 # Thjs
 
 this project was made for fun just to test the new zoneless angular.
-based on a primagen video about json [JSON, I hardly know 'er](https://www.youtube.com/watch?v=TTjYjSEGHek) 
+based on a primagen video about json [JSON, I hardly know 'er](https://www.youtube.com/watch?v=TTjYjSEGHek)
 
 Feel free to add more cases or propose improvements!
 
