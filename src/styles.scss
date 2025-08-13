@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300..800&display=swap");
+
+body {
+  --highlight: #a8c7fa;
+  --secondary: #526b91;
+  --dark: #282828;
+  --normal: #c7c7c7;
+  --error: #ccb5b1;
+  --error-bg: #5f2f2f;
+
+  background-color: var(--dark);
+  color: var(--normal);
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  .code-bold {
+    font-weight: 700;
+  }
+
+  .highlight {
+    font-weight: 700;
+    color: var(--highlight);
+  }
+
+  .error {
+    font-weight: 700;
+    color: var(--error);
+  }
+  .secondary {
+    color: var(--secondary);
+  }
+}
+.console:after {
+  content: "|";
+  opacity: 0;
+  animation: cursor 1s infinite;
+}
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+a {
+  color: var(--highlight);
+
+  &:hover {
+    color: var(--normal);
+  }
+  &:visited {
+    color: var(--secondary);
+  }
+}
+%btn {
+  font-weight: 700;
+  color: var(--normal);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    box-shadow: inset 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+.btn-error {
+  @extend %btn;
+
+  background-color: var(--error-bg);
+  &:hover {
+    background-color: var(--error);
+  }
+}
+.btn-start {
+  @extend %btn;
+  background-color: var(--secondary);
+  &:hover {
+    background-color: var(--highlight);
+  }
+}

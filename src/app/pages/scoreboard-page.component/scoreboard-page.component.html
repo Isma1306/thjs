@@ -1,0 +1,18 @@
+<h1>
+  Your score is: <span class="highlight">{{ score | number : "1.0-0" }}</span>
+</h1>
+<h2>
+  You got <span class="highlight">{{ correct }} / {{ total }}</span>
+</h2>
+<h2>
+  in <span class="highlight">{{ time }} </span> seconds
+</h2>
+<h3 class="console highlight">> {{ wittyRemark }}</h3>
+<div class="col">
+  <button class="btn-start" (click)="copyLinkToClipboard()">
+    {{ shareButtonText() }}
+  </button>
+  <div class="links">
+    <a routerLink="/game">Play again!</a>&nbsp;&nbsp; <a routerLink="/">Home</a>
+  </div>
+</div>

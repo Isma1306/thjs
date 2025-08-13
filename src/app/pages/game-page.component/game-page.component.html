@@ -1,0 +1,49 @@
+<main>
+  <section>
+    @for (text of gameService.options; track text.input) { @if(text.output) {
+    <p class="oldText">> {{ text.input }}</p>
+    <p class="oldText">
+      <•
+      <span [class.error]="text.answer !== text.output">{{ text.output }}</span>
+      @if(text.answer === text.output) { ✅ } @else { ❌
+      <span class="highlight">
+        {{ text.answer }}
+      </span>
+      }
+    </p>
+    } } @if(!(gameService.status$ | async)) {
+    <p class="console">
+      <span class="highlight">></span>
+      Waiting...
+    </p>
+    <button class="btn-start" (click)="start()">START!</button>
+    } @else {
+    <p class="console">
+      <span class="highlight">></span>
+      {{ gameService.displayedOptions$ | async }}
+    </p>
+
+    }
+  </section>
+  @if((gameService.status$ | async)) {
+  <h2 class="timer">Time: {{ gameService.timer$ | async }}</h2>
+  <form [formGroup]="form">
+    <span class="highlight"><•</span>
+    <input
+      #input
+      type="text"
+      formControlName="input"
+      placeholder="Fast! respond to the input!"
+      autofocus
+    />
+  </form>
+  <button
+    class="btn-error"
+    [disabled]="!gameService.status$.value"
+    (click)="panic()"
+    type="button"
+  >
+    Throw Error!
+  </button>
+  }
+</main>
